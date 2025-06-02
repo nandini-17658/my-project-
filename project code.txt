@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class ConstitutionOfIndia {
+
+    private static final String[] FUNDAMENTAL_RIGHTS = {
+        "1. Right to Equality: Prohibits discrimination on grounds of religion, race, caste, sex, or place of birth.",
+        "2. Right to Freedom: Includes freedom of speech, assembly, association, movement, residence, and profession.",
+        "3. Right against Exploitation: Prohibits human trafficking, forced labor, and child labor.",
+        "4. Right to Freedom of Religion: Ensures religious freedom and secularism.",
+        "5. Cultural and Educational Rights: Protects the rights of minorities to conserve their culture and establish educational institutions.",
+        "6. Right to Constitutional Remedies: Allows citizens to move courts to enforce Fundamental Rights."
+    };
+
+    private static void displayRights() {
+        System.out.println("\nThe Constitution of India - Fundamental Rights:");
+        for (String right : FUNDAMENTAL_RIGHTS) {
+            System.out.println(right);
+        }
+        System.out.println("\nBe informed, empowered, and responsible. Jai Hind!");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Citizen Empowerment Program!");
+        System.out.println("Learn about your Fundamental Rights under the Indian Constitution.");
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. View Fundamental Rights");
+            System.out.println("2. Exit");
+            System.out.print("Enter your choice: ");
+
+            int choice;
+            try {
+                choice = scanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine(); // clear invalid input
+                continue;
+            }
+
+            switch (choice) {
+                case 1:
+                    displayRights();
+                    break;
+                case 2:
+                    System.out.println("Thank you for using the Citizen Empowerment Program. Jai Hind!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
